@@ -1,6 +1,36 @@
 
 ## [Unreleased]
   
+## [1.0.0-rc.2]
+  - The prop `upload` is used to specify options for `react-s3-uploader` (replaces `uploaderOptions`). 
+  - Readme is better.
+
+## [1.0.0-rc.1]
+  - Refactoring to clean up this abomination.
+  - Props have been cleaned up. 
+  - Other props are pased to `react-dropzone`.
+  - The `fileUrls` and `filenames` props have been replaced by `uploadedFile` objects. Each `uploadedFile` object has the filename, full s3 url (as `fileUrl`) and a reference to the original file descriptor from the upload.
+  - Children have state information passed again via the `uploadedFiles` prop. 
+  - Passing children props can be disabled by setting the `passChildrenProps` prop to false to avoid React warnings about unused props.
+
+## [0.11.0]
+  - Upgraded react-s3-uploader to ^4.0.0
+
+## [0.10.0]
+  - Removed underscored props in favour of camelCase only.
+
+## [0.9.0]
+  - Upgraded `react-s3-uploader` to v3.3.0
+  - Added some props: `uploaderOptions` and `preprocess`
+
+## [0.8.1]
+  - Fix bug caused by using _.map without importing it
+
+## [0.8.0]
+  - props.children no longer receive the `fileUrl`, `s3Url`, `filename`, `progress`, `error`, `imageStyle` props. If the `fileComponent` prop is specified it will receive these props. 
+  - maxFileSize and minFileSize are passed to the `react-dropzone` component, which handles validation
+  - multiple files are handled better. Props named `fileUrls` and `filenames` are passed to the `fileComponent`, with an entry per file uploaded.
+
 ## [0.7.3]
   - Accepts an prop named `onDrop`, a function to be called with the files object when files are dropped.
 
